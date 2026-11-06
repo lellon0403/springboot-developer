@@ -29,9 +29,15 @@ public class BlogApiController {
     @GetMapping("/api/articles")
     public ResponseEntity<List<ArticleResponse>> findAllArticles(){
         List<ArticleResponse> articles = blogService.findAll().stream().map(ArticleResponse::new).toList();
-
         return ResponseEntity.ok()
                 .body(articles);
+    }
+
+    @GetMapping("/api/articles/{id}")
+    public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
+        Article article = blogService.findById(id);
+        return ResponseEntity.ok()
+                .body(new ArticleResponse(article));
     }
 
     @DeleteMapping("/api/articles/{id}")
