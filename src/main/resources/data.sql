@@ -1,1 +1,3 @@
-$f = "src\main\resources\data.sql"; if (Test-Path $f) { "이미 있음: $f" } else { New-Item -ItemType File -Force -Path $f | Out-Null; "만듦: $f" }
+INSERT INTO member (id, name) VALUES (1, 'name 1')
+    INSERT INTO member (id, name) VALUES (2, 'name 2')
+INSERT INTO member (id, name) VALUES (3, 'name 3')
