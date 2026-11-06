@@ -1,0 +1,1 @@
+$f = "src\main\resources\data.sql"; if (Test-Path $f) { "이미 있음: $f" } else { New-Item -ItemType File -Force -Path $f | Out-Null; "만듦: $f" }
